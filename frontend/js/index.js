@@ -2,8 +2,8 @@ function fazerLogin() {
     const url = 'http://localhost:8080/login'; 
   
     const loginData = {
-      Username: document.getElementById('loginID').value,
-      Senha: document.getElementById('senhaID').value
+      Username: document.getElementById('id').value,
+      Senha: document.getElementById('id').value
     };
      
     const requestOptions = {
