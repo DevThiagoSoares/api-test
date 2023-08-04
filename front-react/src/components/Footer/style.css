@@ -1,35 +1,43 @@
 .footer {
-  margin-top: 31%;
+  width: 100vw;
   padding: 5px 0;
   background: #bad5be;
   color: black;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer-container {
+  align-items: center;
+  justify-content: space-around;
 }
 
 .footer ul {
-  padding: 0;
+  display: flex;
+  justify-content: center;
   list-style: none;
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 0;
+  font-size: 16px;
 }
 
 .footer li {
-  padding: 0 10px;
+  display: flex;
+  padding: 0 15px; /* Adicione um padding para ajustar o espaçamento entre os itens da lista */
 }
 
 .footer ul a {
   color: inherit;
   text-decoration: none;
   opacity: 0.8;
+  font-family: "Fira Sans", sans-serif;
 }
 
-.footer .social {
-  text-align: center;
-  padding-bottom: 25px;
+.social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.footer .social > a {
+.social > a {
   font-size: 24px;
   width: 40px;
   height: 40px;
@@ -37,16 +45,15 @@
   display: inline-block;
   text-align: center;
   border-radius: 50%;
-  border: 1px solid #ccc;
+  border: 1px solid #4e0000;
   margin: 0 8px;
   color: inherit;
   opacity: 0.75;
 }
 
-.footer .social > a:hover {
+.social > a:hover {
   opacity: 0.9;
 }
-
 .footer .copyright {
   margin-top: 15px;
   text-align: center;

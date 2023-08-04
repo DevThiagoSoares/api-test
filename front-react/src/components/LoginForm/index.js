@@ -5,7 +5,7 @@ function LoginForm() {
   return (
     <div className="container">
       <div className="login">
-        <div className="textLogin">{/* Conteúdo do login vai aqui */}</div>
+        <div className="textLogin"></div>
       </div>
     </div>
   );

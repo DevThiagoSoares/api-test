@@ -6,11 +6,11 @@ import "./style.css";
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <LoginForm />
       <Footer />
-    </div>
+    </>
   );
 }
 
