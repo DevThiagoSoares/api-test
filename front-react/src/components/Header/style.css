@@ -1,0 +1,44 @@
+.header {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  color: black;
+  background: #bad5be;
+}
+
+label {
+  display: block;
+  font: 0.9rem "Fira Sans", sans-serif;
+}
+
+input[type="submit"],
+label {
+  margin-top: 1rem;
+}
+
+.nav-link,
+.no-underline {
+  text-decoration: none;
+  color: black;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.no-underline:hover {
+  text-decoration: none;
+}
+
+.nav-link:visited,
+.nav-link:active,
+.no-underline:visited,
+.no-underline:active {
+  color: black;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  font-family: "Fira Sans", sans-serif; /* Fonte desejada para todos os elementos dentro da flex-container */
+}
