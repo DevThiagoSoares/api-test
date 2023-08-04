@@ -29,7 +29,7 @@ exports.createUser = (req, res) => {
 
   const result = userService.createUser(newUser);
 
-  if (result.success) {
+  if (!result.success) {
     return res.status(201).json({ success: true, user: result.data });
   } else {
     return res

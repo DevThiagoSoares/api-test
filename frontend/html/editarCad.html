@@ -20,7 +20,18 @@
         <div class="box-title">
           <h1 class="title">Editar Cadastro</h1>
         </div>
-        <form id="form">
+        <form id="editForm">
+          <span>
+            <input
+              type="number"
+              class="input-hidden"
+              id="id"
+              name="id"
+              placeholder="ID"
+              autocomplete="off"
+              required=""
+            />
+          </span>
           <span>
             <input
               type="text"
@@ -58,7 +69,7 @@
           </span>
 
           <div class="box-btn">
-            <button type="submit" class="btn-submit" onclick="fazerUpdate()">
+            <button type="submit" class="btn-submit" href="../html/listar.html">
               ATUALIZAR
             </button>
           </div>
@@ -66,6 +77,6 @@
       </div>
     </div>
 
-    <script src="/js/index.js"></script>
+    <script src="../js/index.js"></script>
   </body>
 </html>

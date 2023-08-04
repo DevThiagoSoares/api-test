@@ -25,8 +25,8 @@ function fazerLogin() {
     console.log(data);
 
     if (data.success == true) {
-      alert("certo");
       location.href = "../html/userPage.html";
+      alert("certo");
     } else {
       alert(data.message);
     }
@@ -34,37 +34,30 @@ function fazerLogin() {
 }
 
 function fazerCadastro() {
-  const url = "http://localhost:8080/cadastro";
+  const url = "http://localhost:3333/users";
 
   const cadData = {
-    Username: document.getElementById("userNameCadastroID").value,
-    nome: document.getElementById("nomeCadastroID").value,
-    Senha: document.getElementById("cadastroPassawordID").value,
-  };
-
-  const requestOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: JSON.stringify(cadData),
+    username: document.getElementById("userNameCadastroID").value,
+    name: document.getElementById("nomeCadastroID").value,
+    password: document.getElementById("cadastroPassawordID").value,
   };
 
   $.ajax({
     url: url,
     method: "POST",
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      "Content-Type": "application/json",
     },
-    data: cadData,
+    data: JSON.stringify(cadData), // Send the JSON data here
   }).done(function (data) {
     console.log(data);
 
-    if (data.code == "200") {
+    if (data.success) {
       location.href = "../html/userPage.html";
-      //alert('certo')
+      alert("Cadastro feito com sucesso.");
     } else {
-      alert(data.mensage);
+      location.href = "../html/userPage.html";
+      alert("Erro ao fazer o cadastro.");
     }
   });
 }
@@ -120,20 +113,19 @@ function exibirLista(data) {
 }
 
 function editarCadastro(id) {
-  const novoCadastro = {
-    "nome ": "Novo Nome",
-    Username: "Novo Username",
-    id: id,
-    senha: "Nova senha",
+  const updateData = {
+    username: document.getElementById("userNameCadastroID")?.value,
+    name: document.getElementById("nomeCadastroID")?.value,
+    password: document.getElementById("cadastroPassawordID")?.value,
   };
 
-  const url = `http://localhost:3333/editar`;
+  const url = `http://localhost:3333/users/${id}`;
   fetch(url, {
-    method: "POST",
+    method: "PUT",
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(novoCadastro),
+    body: JSON.stringify(updateData),
   })
     .then((response) => {
       if (!response.ok) {
@@ -142,12 +134,29 @@ function editarCadastro(id) {
       return response.json();
     })
     .then((data) => {
-      console.log("Cadastro editado com sucesso:", data);
-      location.href = "/html/editarCad.html";
+      console.log("Cadastro editado com sucesso:", data.success);
+      // Redirecionar somente se a resposta do servidor indicar sucesso
+      if (data.success == true) {
+        location.href = "../html/editarCad.html";
+        // alert("Cadastro editado com sucesso.");
+      } else {
+        location.href = "../html/listar.html";
+        alert("Erro ao editar o cadastro.");
+      }
     })
     .catch((error) => {
       console.error("Erro na requisição de edição:", error);
     });
+}
+
+const editForm = document.getElementById("editForm");
+if (editForm) {
+  editForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const id = document.getElementById("id").value; // Get the id value from the form input
+    editarCadastro(id);
+  });
 }
 
 function excluirCadastro(id) {

@@ -44,7 +44,7 @@ exports.createUser = (newUser) => {
   fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
 
   return {
-    status: 200,
+    status: 201,
     message: "Usuário criado com sucesso.",
     data: user,
   };
