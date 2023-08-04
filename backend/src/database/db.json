@@ -8,39 +8,12 @@
     },
     {
       "id": 3,
-      "username": "pedro1",
-      "password": "p123",
-      "name": "pedro"
-    },
-    {
-      "id": 4,
-      "username": "pedro5",
-      "name": "pedro",
-      "password": "p123"
-    },
-    {
-      "id": 7,
-      "username": "thiago1",
-      "password": "t123",
-      "name": "thiago Soares"
-    },
-    {
-      "id": 9,
-      "username": "thiago2",
-      "password": "t123",
-      "name": "thiago Soares"
-    },
-    {
-      "id": 10,
-      "username": "thiago3",
-      "password": "t123",
-      "name": "thiago Soares"
-    },
-    {
-      "id": 11,
-      "username": "thiago43",
-      "password": "t123",
-      "name": "thiago Soares"
+      "username": "aa",
+      "password": "aa",
+      "name": "sa",
+      "nome ": "Novo Nome",
+      "Username": "Novo Username",
+      "senha": "Nova senha"
     }
   ]
 }
