@@ -1,32 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 
-function Header() {
+function Header(props) {
+  const { brand, links } = props;
+
   return (
     <header className="header">
       <nav className="navbar">
         <div className="container">
           <div className="flex-container">
-            <a className="navbar-brand no-underline" href="/">
-              <h2 className="no-underline">RESIDUUM</h2>
-            </a>
+            <Link className="navbar-brand no-underline" to="/">
+              <h2 className="no-underline">{brand}</h2>
+            </Link>
             <div className="navbar-nav flex-container">
-              <a className="nav-link" href="#!">
-                Home
-              </a>
-              <a className="nav-link" href="#!">
-                Sobre
-              </a>
-              <a className="nav-link" href="#!">
-                Projetos
-              </a>
-              <a
-                className="nav-link no-underline"
-                href="./validation.html"
-                target="_blank"
-              >
-                Login
-              </a>
+              {links.map((link) => (
+                <Link key={link.to} className="nav-link" to={link.to}>
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
